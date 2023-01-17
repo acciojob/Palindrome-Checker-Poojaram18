@@ -1,20 +1,18 @@
 // complete the given function
 
 function palindrome(str){
-	if(str.length== 0){
-		return false;
-	}
-	
-	let left =0;
-	let right = str.length-1;
-	while(left<right){
-		if(str[left]!==str[right]){
-			return false;
-		}
-		left++;
-		right--;
-		}
-	return true;
-	}
+ var removeChar = str.replace(/[^A-Z0-9]/ig, "").toLowerCase();
+
+  /* reverse removeChar for comparison*/
+  var checkPalindrome = removeChar.split('').reverse().join('');
+
+  /* Check to see if str is a Palindrome*/
+   if(removeChar === checkPalindrome){
+     return true;
+   }else{
+     return false;
+   }
+}
+
 
 module.exports = palindrome
